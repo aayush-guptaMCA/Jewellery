@@ -1,0 +1,581 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact Us – Shree Ram Ji Diamond Palace</title>
+    <meta name="description"
+        content="Get in touch with Shree Ram Ji Diamond Palace. Visit our showroom, call us or send us a message for any jewellery enquiry." />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Jost:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet" />
+    <link rel="stylesheet" href="css/topbar.css" />
+    <link rel="stylesheet" href="css/home.css" />
+    <link rel="stylesheet" href="css/contact.css">
+
+</head>
+
+<body>
+
+    <!-- ====================== TOP BAR ====================== -->
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <a href="#" aria-label="Facebook">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                </svg>
+            </a>
+            <a href="#" aria-label="Twitter">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22 4s-.7 2.1-2 3.4c1.6 10-9.4 17.3-18 11.6 2.2.1 4.4-.6 6-2C3 15.5.5 9.6 3 5c2.2 2.6 5.6 4.1 9 4-.9-4.2 4-6.6 7-3.8 1.1 0 3-1.2 3-1.2z" />
+                </svg>
+            </a>
+            <a href="#" aria-label="YouTube">
+                <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path
+                        d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" />
+                    <polygon points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02" fill="#1a1a1a" stroke="none" />
+                </svg>
+            </a>
+        </div>
+        <div class="top-bar-center">✦ FREE SHIPPING ON ALL ORDERS OVER <span class="accent">₹5,000</span> ✦</div>
+        <div class="top-bar-right">
+            <a href="#" id="top-cart-link">Cart</a>
+            <a href="#" id="top-search-link" onclick="openSearch(); return false;">Search</a>
+            <a href="#" id="top-help-link">Help</a>
+        </div>
+    </div>
+
+    <!-- ====================== MAIN HEADER ====================== -->
+    <header class="main-header" id="main-header">
+        <button class="hamburger-btn" id="hamburger-btn" aria-label="Open menu">
+            <span></span><span></span><span></span>
+        </button>
+        <a href="index.html" class="logo">
+            <div class="logo-text">Shree Ram Ji<span>Diamond Palace</span></div>
+        </a>
+        <nav aria-label="Main navigation">
+            <ul class="main-nav" id="main-nav">
+                <li><a href="index.html" id="nav-home">Home</a></li>
+                <li class="has-mega-menu" id="nav-products-li">
+                    <a href="#" id="nav-products">Products
+                        <svg class="nav-arrow" viewBox="0 0 16 16" fill="currentColor">
+                            <path d="M8 11L2 5h12z" />
+                        </svg>
+                    </a>
+                    <div class="mega-menu" id="mega-menu">
+                        <div class="mega-left">
+                            <h4>All Categories</h4>
+                            <ul class="mega-cat-list">
+                                <li><a href="gold.html">Gold</a></li>
+                                <li><a href="#">Diamond</a></li>
+                                <li><a href="#">Silver</a></li>
+                            </ul>
+                            <a href="#" class="mega-all-btn" id="mega-all-products-btn">All Products
+                                <svg viewBox="0 0 256 512">
+                                    <path
+                                        d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
+                                </svg>
+                            </a>
+                        </div>
+                        <div class="mega-right">
+                            <div class="mega-grid">
+                                <a href="#" class="mega-item" id="mega-bracelets">
+                                    <div class="mega-item-thumb"><img
+                                            src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/042-bracelet-2.svg"
+                                            alt="Bracelets" loading="lazy" /><span class="mega-item-count">13</span>
+                                    </div>
+                                    <div class="mega-item-name">Bracelets</div>
+                                </a>
+                                <a href="#" class="mega-item" id="mega-earrings">
+                                    <div class="mega-item-thumb"><img
+                                            src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/015-earrings-1.svg"
+                                            alt="Earrings" loading="lazy" /><span class="mega-item-count">3</span></div>
+                                    <div class="mega-item-name">Earrings</div>
+                                </a>
+                                <a href="#" class="mega-item" id="mega-goldrings">
+                                    <div class="mega-item-thumb"><img
+                                            src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/025-earrings-3.svg"
+                                            alt="Gold Rings" loading="lazy" /><span class="mega-item-count">11</span>
+                                    </div>
+                                    <div class="mega-item-name">Gold Rings</div>
+                                </a>
+                                <a href="#" class="mega-item" id="mega-necklaces">
+                                    <div class="mega-item-thumb"><img
+                                            src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/045-pendant-1.svg"
+                                            alt="Necklaces" loading="lazy" /><span class="mega-item-count">7</span>
+                                    </div>
+                                    <div class="mega-item-name">Necklaces</div>
+                                </a>
+                                <a href="#" class="mega-item" id="mega-noserings">
+                                    <div class="mega-item-thumb"><img
+                                            src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/031-ring-1.svg"
+                                            alt="Nose Rings" loading="lazy" /><span class="mega-item-count">16</span>
+                                    </div>
+                                    <div class="mega-item-name">Nose Rings</div>
+                                </a>
+                                <a href="#" class="mega-item" id="mega-rings">
+                                    <div class="mega-item-thumb"><img
+                                            src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/024-engagement.svg"
+                                            alt="Rings" loading="lazy" /><span class="mega-item-count">3</span></div>
+                                    <div class="mega-item-name">Rings</div>
+                                </a>
+                                <a href="#" class="mega-item" id="mega-sets">
+                                    <div class="mega-item-thumb"><img
+                                            src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/021-gem.svg"
+                                            alt="Sets" loading="lazy" /><span class="mega-item-count">3</span></div>
+                                    <div class="mega-item-name">Sets</div>
+                                </a>
+                                <a href="#" class="mega-item" id="mega-silverbangles">
+                                    <div class="mega-item-thumb"><img
+                                            src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/042-bracelet-2.svg"
+                                            alt="Silver Bangles" loading="lazy" /><span class="mega-item-count">7</span>
+                                    </div>
+                                    <div class="mega-item-name">Silver Bangles</div>
+                                </a>
+                                <a href="#" class="mega-item" id="mega-silverrings">
+                                    <div class="mega-item-thumb"><img
+                                            src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/020-earrings-2.svg"
+                                            alt="Silver Rings" loading="lazy" /><span class="mega-item-count">8</span>
+                                    </div>
+                                    <div class="mega-item-name">Silver Rings</div>
+                                </a>
+                                <a href="#" class="mega-item" id="mega-goldbangles">
+                                    <div class="mega-item-thumb"><img
+                                            src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/042-bracelet-2.svg"
+                                            alt="Gold Bangles" loading="lazy" /><span class="mega-item-count">7</span>
+                                    </div>
+                                    <div class="mega-item-name">Gold Bangles</div>
+                                </a>
+                                <a href="#" class="mega-item" id="mega-goldbuckle">
+                                    <div class="mega-item-thumb"><img
+                                            src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/050-necklace-4.svg"
+                                            alt="Gold Buckle" loading="lazy" /><span class="mega-item-count">7</span>
+                                    </div>
+                                    <div class="mega-item-name">Gold Buckle</div>
+                                </a>
+                                <a href="#" class="mega-item" id="mega-goldpiercing">
+                                    <div class="mega-item-thumb"><img
+                                            src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/043-piercing.svg"
+                                            alt="Gold Piercing" loading="lazy" /><span class="mega-item-count">7</span>
+                                    </div>
+                                    <div class="mega-item-name">Gold Piercing</div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li><a href="about-us.html" id="nav-about">About Us</a></li>
+                <li class="active"><a href="Contact.html" id="nav-contact">Contact Us</a></li>
+            </ul>
+        </nav>
+        <div class="header-actions">
+            <button class="icon-btn search-toggle-btn" aria-label="Search" onclick="openSearch()"
+                id="header-search-btn">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="11" cy="11" r="8" />
+                    <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                </svg>
+            </button>
+            <button class="icon-btn" aria-label="Wishlist" id="header-wishlist-btn">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" />
+                </svg>
+            </button>
+            <button class="icon-btn" aria-label="Cart" id="header-cart-btn">
+                <svg viewBox="0 0 24 24">
+                    <path d="M6 2 3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z" />
+                    <line x1="3" y1="6" x2="21" y2="6" />
+                    <path d="M16 10a4 4 0 0 1-8 0" />
+                </svg>
+                <span class="cart-count">0</span>
+            </button>
+        </div>
+    </header>
+
+    <!-- ====================== SEARCH OVERLAY ====================== -->
+    <div class="search-overlay" id="search-overlay" role="dialog" aria-label="Search">
+        <button class="search-overlay-close" onclick="closeSearch()" id="search-close-btn"
+            aria-label="Close search">✕</button>
+        <div class="search-overlay-inner">
+            <h3>What are you looking for?</h3>
+            <div class="search-overlay-input">
+                <input type="text" id="search-input" placeholder="Search products..." autocomplete="off"
+                    aria-label="Search products" />
+                <button aria-label="Submit search"><svg viewBox="0 0 24 24">
+                        <circle cx="11" cy="11" r="8" />
+                        <line x1="21" y1="21" x2="16.65" y2="16.65" />
+                    </svg></button>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================== MOBILE DRAWER ====================== -->
+    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile navigation">
+        <div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+        <div class="drawer-panel">
+            <div class="drawer-header">
+                <div class="logo-text" style="font-size:16px;">Shree Ram Ji<span
+                        style="display:block;font-size:10px;color:#c9a84c;font-family:'Jost',sans-serif;letter-spacing:0.2em;">Diamond
+                        Palace</span></div>
+                <button class="drawer-close" onclick="closeDrawer()" id="drawer-close-btn"
+                    aria-label="Close menu">✕</button>
+            </div>
+            <div class="drawer-search">
+                <input type="text" id="drawer-search-input" placeholder="Search products..."
+                    aria-label="Search products" />
+            </div>
+            <ul class="drawer-nav">
+                <li><a href="index.html" id="drawer-home">Home <span class="arrow">›</span></a></li>
+                <li><a href="#" id="drawer-products">Products <span class="arrow">›</span></a></li>
+                <li><a href="index.html#about" id="drawer-about">About Us <span class="arrow">›</span></a></li>
+                <li><a href="Contact.html" id="drawer-contact">Contact Us <span class="arrow">›</span></a></li>
+            </ul>
+            <div class="drawer-footer">© 2024, <strong>Shree Ram Ji Diamond Palace</strong>. All rights reserved.</div>
+        </div>
+    </div>
+
+    <!-- ====================== BREADCRUMB ====================== -->
+    <div class="breadcrumb">
+        <a href="index.html">Home</a>
+        <span>/</span>
+        Contact Us
+    </div>
+
+    <!-- ====================== BANNER ====================== -->
+    <div class="contact-banner">
+        <div class="contact-banner-inner">
+            <span class="section-tag">We'd Love to Hear From You</span>
+            <h1>Contact Us</h1>
+            <p>Visit our showroom, give us a call, or send us a message. Our jewellery experts are ready to assist you.
+            </p>
+        </div>
+    </div>
+
+    <!-- ====================== INFO STRIP ====================== -->
+    <div class="contact-strip">
+        <div class="strip-item">
+            <div class="strip-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                </svg>
+            </div>
+            <div class="strip-text">
+                <h5>Our Store</h5>
+                <p>123, Jewellery Market,<br>New Delhi – 110006</p>
+            </div>
+        </div>
+        <div class="strip-item">
+            <div class="strip-icon">
+                <svg viewBox="0 0 24 24">
+                    <path
+                        d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                </svg>
+            </div>
+            <div class="strip-text">
+                <h5>Phone</h5>
+                <p>+91 98765 43210<br>+91 98765 43211</p>
+            </div>
+        </div>
+        <div class="strip-item">
+            <div class="strip-icon">
+                <svg viewBox="0 0 24 24">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                    <polyline points="22,6 12,13 2,6" />
+                </svg>
+            </div>
+            <div class="strip-text">
+                <h5>Email Us</h5>
+                <p>info@shreeramjipalace.com<br>support@shreeramjipalace.com</p>
+            </div>
+        </div>
+        <div class="strip-item">
+            <div class="strip-icon">
+                <svg viewBox="0 0 24 24">
+                    <circle cx="12" cy="12" r="10" />
+                    <polyline points="12 6 12 12 16 14" />
+                </svg>
+            </div>
+            <div class="strip-text">
+                <h5>Working Hours</h5>
+                <p>Mon – Sat: 10 AM – 8 PM<br>Sunday: 11 AM – 6 PM</p>
+            </div>
+        </div>
+    </div>
+
+    <!-- ====================== MAP + CONTACT FORM ====================== -->
+    <div class="contact-section">
+
+        <!-- LEFT: Map -->
+        <div class="contact-map">
+            <!-- Google Maps embed for Connaught Place / Jewellery Market area, New Delhi -->
+            <iframe
+                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3501.9119297591267!2d77.21582097469487!3d28.627441684208454!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x390cfd37b741d057%3A0xcdee88e47393c3f1!2sConnaught%20Place%2C%20New%20Delhi%2C%20Delhi%20110001!5e0!3m2!1sen!2sin!4v1718080000000!5m2!1sen!2sin"
+                allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+                title="Shree Ram Ji Diamond Palace Location">
+            </iframe>
+        </div>
+
+        <!-- RIGHT: Info + Form -->
+        <div class="contact-right">
+
+            <!-- Info Row -->
+            <div class="contact-info-row">
+
+                <!-- Our Showroom -->
+                <div class="contact-info-block">
+                    <h3>Our Showroom</h3>
+                    <div class="contact-detail-item">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                            <circle cx="12" cy="10" r="3" />
+                        </svg>
+                        <p style="margin:0;">123, Jewellery Market, Dariba Kalan,<br>New Delhi – 110006, India</p>
+                    </div>
+                    <div class="contact-detail-item">
+                        <svg viewBox="0 0 24 24">
+                            <path
+                                d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                        </svg>
+                        <div>
+                            <a href="tel:+919876543210">+91 98765 43210</a>
+                            <a href="tel:+919876543211">+91 98765 43211</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Quick Help -->
+                <div class="contact-info-block">
+                    <h3>Quick Help</h3>
+                    <p style="color:#777;margin-bottom:14px;font-size:13.5px;">You can ask anything you want to know
+                        about our products and services.</p>
+                    <div class="contact-detail-item">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                            <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        <div>
+                            <a href="mailto:info@shreeramjipalace.com" class="email-link">info@shreeramjipalace.com</a>
+                            <a href="mailto:support@shreeramjipalace.com"
+                                class="email-link">support@shreeramjipalace.com</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div><!-- /.contact-info-row -->
+
+            <!-- Send a Message Form -->
+            <div class="contact-form-wrap">
+                <h3>Send a Message</h3>
+
+                <div class="form-success" id="form-success-msg">
+                    ✓ Thank you! Your message has been sent. We'll get back to you within 24 hours.
+                </div>
+
+                <form class="contact-form" id="contact-page-form" onsubmit="submitContactForm(event)" novalidate>
+                    <div class="form-row">
+                        <div class="form-group">
+                            <input type="text" class="form-control" id="contact-name" placeholder="Your name"
+                                required />
+                        </div>
+                        <div class="form-group">
+                            <input type="email" class="form-control" id="contact-email" placeholder="Your E-mail"
+                                required />
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <select class="form-control" id="contact-subject" required>
+                            <option value="" disabled selected>Select a Subject</option>
+                            <option value="product">Product Enquiry</option>
+                            <option value="order">Order Status</option>
+                            <option value="customisation">Customisation Request</option>
+                            <option value="technical">Technical Help</option>
+                            <option value="return">Return / Exchange</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <textarea class="form-control" id="contact-message" placeholder="Write your message here..."
+                            required></textarea>
+                    </div>
+
+                    <button type="submit" class="form-submit-btn" id="contact-submit-btn">
+                        <svg viewBox="0 0 24 24">
+                            <line x1="22" y1="2" x2="11" y2="13" />
+                            <polygon points="22 2 15 22 11 13 2 9 22 2" />
+                        </svg>
+                        Send Message
+                    </button>
+                </form>
+            </div>
+
+        </div><!-- /.contact-right -->
+    </div><!-- /.contact-section -->
+
+    <!-- ====================== FOOTER ====================== -->
+    <footer class="site-footer" aria-label="Site footer">
+        <div class="footer-grid">
+            <div>
+                <div class="footer-logo-text">Shree Ram Ji</div>
+                <div class="footer-logo-sub">Diamond Palace</div>
+                <p class="footer-about">Crafting timeless jewellery with passion and precision since generations. Every
+                    piece tells a story of love, heritage and unmatched artisanship.</p>
+                <div class="footer-social">
+                    <a href="#" aria-label="Facebook">
+                        <svg viewBox="0 0 24 24">
+                            <path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="Instagram">
+                        <svg viewBox="0 0 24 24">
+                            <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                            <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                            <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                        </svg>
+                    </a>
+                    <a href="#" aria-label="YouTube">
+                        <svg viewBox="0 0 24 24" fill="currentColor">
+                            <path
+                                d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58zM9.75 15.02V8.98L15.5 12l-5.75 3.02z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+            <div class="footer-col">
+                <h5>Quick Links</h5>
+                <ul class="footer-links">
+                    <li><a href="index.html">› Home</a></li>
+                    <li><a href="index.html#categories">› All Categories</a></li>
+                    <li><a href="index.html#featured-products">› New Arrivals</a></li>
+                    <li><a href="index.html#about">› About Us</a></li>
+                    <li><a href="Contact.html">› Contact Us</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Jewellery</h5>
+                <ul class="footer-links">
+                    <li><a href="gold.html">› Gold Jewellery</a></li>
+                    <li><a href="#">› Diamond Rings</a></li>
+                    <li><a href="#">› Silver Bangles</a></li>
+                    <li><a href="#">› Necklaces</a></li>
+                    <li><a href="#">› Bridal Sets</a></li>
+                    <li><a href="#">› Earrings</a></li>
+                </ul>
+            </div>
+            <div class="footer-col">
+                <h5>Contact</h5>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                        <circle cx="12" cy="10" r="3" />
+                    </svg>
+                    123, Jewellery Market,<br />New Delhi – 110006
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24">
+                        <path
+                            d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07A19.5 19.5 0 0 1 4.69 12 19.79 19.79 0 0 1 1.62 3.38 2 2 0 0 1 3.59 1.21h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L7.91 8.77a16 16 0 0 0 6.29 6.29l.87-.87a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z" />
+                    </svg>
+                    +91 98765 43210
+                </div>
+                <div class="footer-contact-item">
+                    <svg viewBox="0 0 24 24">
+                        <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                        <polyline points="22,6 12,13 2,6" />
+                    </svg>
+                    info@shreeramjipalace.com
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <span>© 2024 <strong style="color:#c9a84c;">Shree Ram Ji Diamond Palace</strong>. All rights
+                reserved.</span>
+            <div style="display:flex;gap:20px;">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Sitemap</a>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ====================== JAVASCRIPT ====================== -->
+    <script>
+        // ---- HEADER SCROLL ----
+        const mainHeader = document.getElementById('main-header');
+        window.addEventListener('scroll', () => {
+            mainHeader.classList.toggle('scrolled', window.scrollY > 30);
+        });
+
+        // ---- MOBILE DRAWER ----
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        function openDrawer() {
+            mobileDrawer.classList.add('open');
+            document.body.style.overflow = 'hidden';
+        }
+        function closeDrawer() {
+            mobileDrawer.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.getElementById('hamburger-btn').addEventListener('click', openDrawer);
+
+        // ---- SEARCH OVERLAY ----
+        const searchOverlay = document.getElementById('search-overlay');
+        function openSearch() {
+            searchOverlay.classList.add('open');
+            document.body.style.overflow = 'hidden';
+            setTimeout(() => document.getElementById('search-input').focus(), 300);
+        }
+        function closeSearch() {
+            searchOverlay.classList.remove('open');
+            document.body.style.overflow = '';
+        }
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') { closeSearch(); closeDrawer(); }
+        });
+
+        // ---- CONTACT FORM ----
+        function submitContactForm(e) {
+            e.preventDefault();
+            const form = document.getElementById('contact-page-form');
+            const btn = document.getElementById('contact-submit-btn');
+            const msg = document.getElementById('form-success-msg');
+
+            // Basic validation
+            const name = document.getElementById('contact-name').value.trim();
+            const email = document.getElementById('contact-email').value.trim();
+            const subject = document.getElementById('contact-subject').value;
+            const message = document.getElementById('contact-message').value.trim();
+            if (!name || !email || !subject || !message) {
+                btn.textContent = 'Please fill all fields';
+                btn.style.background = '#e53935';
+                btn.style.borderColor = '#e53935';
+                setTimeout(() => {
+                    btn.innerHTML = '<svg viewBox="0 0 24 24" width="14" height="14" fill="none" stroke="currentColor" stroke-width="2.2"><line x1="22" y1="2" x2="11" y2="13"/><polygon points="22 2 15 22 11 13 2 9 22 2"/></svg> Send Message';
+                    btn.style.background = '#111';
+                    btn.style.borderColor = '#111';
+                }, 2500);
+                return;
+            }
+
+            // Simulate sending
+            btn.textContent = 'Sending…';
+            btn.disabled = true;
+            setTimeout(() => {
+                form.style.display = 'none';
+                msg.style.display = 'block';
+                form.reset();
+            }, 1200);
+        }
+    </script>
+
+</body>
+
+</html>
