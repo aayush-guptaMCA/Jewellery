@@ -13,7 +13,7 @@
 ============================================= */
 
 const WHATSAPP_CONFIG = {
-    ACCESS_TOKEN: 'EAASioumecN4BRrYD1FzEZCjfa6I95sDZC2txLHSiOad4CIMgOlx0zBkkVZByqNiw8EgmNOwUTicvqu23uiVt1HFFYAsc6u0tsKAZBSmBc5S6BEuIpewPipu2QkN8VQnMTTIddWLHTtHg035o7u3eFINk48GZCi5XeLgGOwOWzKAEINR4i4LiuEspfJAtxmNZCYwiqwbYOfOi1tZAfsfPXfnuWCTlJTyGfEgPNBSjNcZA97dDGPmZC93tHuce3JkQW2muMgtSxqnEgfdsyOLdCWpK9HjRAfgZDZD',
+    ACCESS_TOKEN: 'EAASioumecN4BRoZCP6JrtxFl8W6LQZCwZACNNyeZCBSnZCAq73YG2WjDKOaivgyRoWjOMLa78xmwbUZA0zhTmuy6xWb4JO0AcpH6OddPKQ7VOF1gmRZC9PRpaCzDieBcNrurACZCq4oiW7kEGZBB2z4CKGjphEYiJaoIqfLDwb9ZChImvwMADsTAvkOrWmmdjZBRGWE73U2mMt1x4U5WqNIV4uHG25a6WSXibcw8LbDSr4gYvA9IovXaG4FyejbVNpAGqGBm8ttWDmAL9QA0ZA8b4d4ZByHTK',
     PHONE_NUMBER_ID: '1097985103408218',
     RECIPIENT_PHONE: '919045010151',
     API_VERSION: 'v25.0'
@@ -27,44 +27,53 @@ const WHATSAPP_CONFIG = {
 async function sendWhatsAppEnquiry(enquiryData) {
     const { productName, customerName, phone, email, message } = enquiryData;
 
-    // Format the enquiry message
-    const enquiryText = [
-        `🔔 *New Enquiry Received!*`,
-        `━━━━━━━━━━━━━━━━━━`,
-        ``,
-        `📦 *Product:* ${productName}`,
-        `👤 *Customer:* ${customerName}`,
-        `📞 *Phone:* ${phone}`,
-        email ? `📧 *Email:* ${email}` : '',
-        message ? `💬 *Message:* ${message}` : '',
-        ``,
-        `━━━━━━━━━━━━━━━━━━`,
-        `🕐 *Time:* ${new Date().toLocaleString('en-IN', { timeZone: 'Asia/Kolkata' })}`,
-        `🌐 *Source:* Shree Ram Ji Diamond Palace Website`
-    ].filter(line => line !== '').join('\n');
+  
 
     const url = `https://graph.facebook.com/${WHATSAPP_CONFIG.API_VERSION}/${WHATSAPP_CONFIG.PHONE_NUMBER_ID}/messages`;
 
-    // const payload = {
-    //     messaging_product: 'whatsapp',
-    //     to: WHATSAPP_CONFIG.RECIPIENT_PHONE,
-    //     type: 'text',
-    //     text: {
-    //         preview_url: false,
-    //         body: enquiryText
-    //     }
-    // };
-    const payload = {
-        messaging_product: 'whatsapp',
-        to: WHATSAPP_CONFIG.RECIPIENT_PHONE,
-        type: 'template',
-        template: {
-            name: 'hello_world',
-            language: {
-                code: 'en_US'
+const payload = {
+    messaging_product: "whatsapp",
+    to: WHATSAPP_CONFIG.RECIPIENT_PHONE,
+    type: "template",
+    template: {
+        name: "enquiryform",
+        language: {
+            code: "en"
+        },
+        components: [
+            {
+                type: "body",
+                parameters: [
+                    {
+                        type: "text",
+                        parameter_name: "product_name",
+                        text: productName
+                    },
+                    {
+                        type: "text",
+                        parameter_name: "customer_name",
+                        text: customerName
+                    },
+                    {
+                        type: "text",
+                        parameter_name: "phone_number",
+                        text: phone
+                    },
+                    {
+                        type: "text",
+                        parameter_name: "email_address",
+                        text: email
+                    },
+                    {
+                        type: "text",
+                        parameter_name: "customer_message",
+                        text: message
+                    }
+                ]
             }
-        }
-    };
+        ]
+    }
+};
     try {
         const response = await fetch(url, {
             method: 'POST',
