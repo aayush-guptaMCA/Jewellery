@@ -73,7 +73,7 @@
                                 <li><a href="diamond.html">Diamond</a></li>
                                 <li><a href="silver.html" style="color:#a8a9ad;font-weight:600;">Silver</a></li>
                             </ul>
-                            <a href="#" class="mega-all-btn" id="mega-all-products-btn">All Products
+                            <a href="jewellery.html" class="mega-all-btn" id="mega-all-products-btn">All Products
                                 <svg viewBox="0 0 256 512" xmlns="http://www.w3.org/2000/svg">
                                     <path
                                         d="M224.3 273l-136 136c-9.4 9.4-24.6 9.4-33.9 0l-22.6-22.6c-9.4-9.4-9.4-24.6 0-33.9l96.4-96.4-96.4-96.4c-9.4-9.4-9.4-24.6 0-33.9L54.3 103c9.4-9.4 24.6-9.4 33.9 0l136 136c9.5 9.4 9.5 24.6.1 34z" />
@@ -199,7 +199,7 @@
         <div class="drawer-panel">
             <div class="drawer-header">
                 <div class="logo-text" style="font-size:16px;">Shree Ram Ji<span
-                        style="display:block;font-size:10px;color:#a8a9ad;font-family:'Jost',sans-serif;letter-spacing:0.2em;">Diamond
+                        style="display:block;font-size:10px;color:#c9a84c;font-family:'Jost',sans-serif;letter-spacing:0.2em;">Diamond
                         Palace</span></div>
                 <button class="drawer-close" onclick="closeDrawer()" id="drawer-close-btn" aria-label="Close menu">✕</button>
             </div>
@@ -208,8 +208,91 @@
             </div>
             <ul class="drawer-nav">
                 <li><a href="index.html" id="drawer-home">Home <span class="arrow">›</span></a></li>
-                <li><a href="#" id="drawer-products">Products <span class="arrow">›</span></a></li>
-                <li><a href="about-us.html" id="drawer-about">About Us <span class="arrow">›</span></a></li>
+
+                <!-- Products accordion -->
+                <li id="drawer-products-li">
+                    <a href="#" id="drawer-products" onclick="toggleDrawerProducts(event)">Products <span class="arrow">›</span></a>
+                    <ul class="drawer-submenu" id="drawer-products-submenu">
+                        <!-- Category section -->
+                        <li class="drawer-submenu-section">Shop By Material</li>
+                        <li><a href="gold.html">› Gold Jewellery</a></li>
+                        <li><a href="diamond.html">› Diamond Collection</a></li>
+                        <li><a href="silver.html">› Silver Jewellery</a></li>
+
+                        <!-- Product icon grid -->
+                        <li class="drawer-submenu-section" style="margin-top:4px;">All Categories</li>
+                        <li style="padding:0;border:0;">
+                            <div class="drawer-product-grid">
+                                <a href="#" class="drawer-product-item">
+                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/042-bracelet-2.svg" alt="Bracelets" loading="lazy" />
+                                    <span>Bracelets</span>
+                                    <span class="drawer-product-count">13 items</span>
+                                </a>
+                                <a href="earrings.html" class="drawer-product-item">
+                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/015-earrings-1.svg" alt="Earrings" loading="lazy" />
+                                    <span>Earrings</span>
+                                    <span class="drawer-product-count">16 items</span>
+                                </a>
+                                <a href="#" class="drawer-product-item">
+                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/025-earrings-3.svg" alt="Gold Rings" loading="lazy" />
+                                    <span>Gold Rings</span>
+                                    <span class="drawer-product-count">11 items</span>
+                                </a>
+                                <a href="#" class="drawer-product-item">
+                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/045-pendant-1.svg" alt="Necklaces" loading="lazy" />
+                                    <span>Necklaces</span>
+                                    <span class="drawer-product-count">7 items</span>
+                                </a>
+                                <a href="#" class="drawer-product-item">
+                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/031-ring-1.svg" alt="Nose Rings" loading="lazy" />
+                                    <span>Nose Rings</span>
+                                    <span class="drawer-product-count">16 items</span>
+                                </a>
+                                <a href="#" class="drawer-product-item">
+                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/024-engagement.svg" alt="Rings" loading="lazy" />
+                                    <span>Rings</span>
+                                    <span class="drawer-product-count">3 items</span>
+                                </a>
+                                <a href="#" class="drawer-product-item">
+                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/021-gem.svg" alt="Sets" loading="lazy" />
+                                    <span>Sets</span>
+                                    <span class="drawer-product-count">3 items</span>
+                                </a>
+                                <a href="#" class="drawer-product-item">
+                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/042-bracelet-2.svg" alt="Silver Bangles" loading="lazy" />
+                                    <span>Silver Bangles</span>
+                                    <span class="drawer-product-count">7 items</span>
+                                </a>
+                                <a href="#" class="drawer-product-item">
+                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/020-earrings-2.svg" alt="Silver Rings" loading="lazy" />
+                                    <span>Silver Rings</span>
+                                    <span class="drawer-product-count">8 items</span>
+                                </a>
+                                <a href="#" class="drawer-product-item">
+                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/042-bracelet-2.svg" alt="Gold Bangles" loading="lazy" />
+                                    <span>Gold Bangles</span>
+                                    <span class="drawer-product-count">7 items</span>
+                                </a>
+                                <a href="#" class="drawer-product-item">
+                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/050-necklace-4.svg" alt="Gold Buckle" loading="lazy" />
+                                    <span>Gold Buckle</span>
+                                    <span class="drawer-product-count">7 items</span>
+                                </a>
+                                <a href="#" class="drawer-product-item">
+                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/043-piercing.svg" alt="Gold Piercing" loading="lazy" />
+                                    <span>Gold Piercing</span>
+                                    <span class="drawer-product-count">7 items</span>
+                                </a>
+                            </div>
+                        </li>
+                        <!-- All Products button -->
+                        <li style="padding:0;border:0;">
+                            <a href="jewellery.html" class="drawer-all-products-btn">View All Products →</a>
+                        </li>
+                    </ul>
+                </li>
+
+                <li><a href="about-us.html" id="drawer-about" onclick="closeDrawer()">About Us <span class="arrow">›</span></a></li>
                 <li><a href="Contact.html" id="drawer-contact">Contact Us <span class="arrow">›</span></a></li>
             </ul>
             <div class="drawer-footer">© 2024, <strong>Shree Ram Ji Diamond Palace</strong>. All rights reserved.</div>
@@ -979,8 +1062,20 @@
         });
 
         // ---- Mobile drawer ----
-        function openDrawer() { document.getElementById('mobile-drawer').classList.add('open'); document.body.style.overflow = 'hidden'; }
-        function closeDrawer() { document.getElementById('mobile-drawer').classList.remove('open'); document.body.style.overflow = ''; }
+        const mobileDrawer = document.getElementById('mobile-drawer');
+        function openDrawer() { mobileDrawer.classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function closeDrawer() {
+            mobileDrawer.classList.remove('open');
+            document.body.style.overflow = '';
+            // Close products accordion when drawer closes
+            const productsLi = document.getElementById('drawer-products-li');
+            if (productsLi) productsLi.classList.remove('open');
+        }
+        function toggleDrawerProducts(e) {
+            e.preventDefault();
+            const li = document.getElementById('drawer-products-li');
+            li.classList.toggle('open');
+        }
         document.getElementById('hamburger-btn').addEventListener('click', openDrawer);
 
         // ---- Search overlay ----
