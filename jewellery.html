@@ -1134,6 +1134,12 @@
                 <div class="pd-thumbs" id="pd-thumbs"></div>
                 <div class="pd-main-wrap">
                     <img class="pd-main-img" id="pd-main-img" src="" alt="Product Image" />
+                    <button class="pd-nav pd-prev" onclick="pdSlide(-1)" aria-label="Previous image">
+                        <svg viewBox="0 0 24 24"><polyline points="15 18 9 12 15 6" /></svg>
+                    </button>
+                    <button class="pd-nav pd-next" onclick="pdSlide(1)" aria-label="Next image">
+                        <svg viewBox="0 0 24 24"><polyline points="9 18 15 12 9 6" /></svg>
+                    </button>
                     <div class="pd-zoom-hint">Click image to zoom</div>
                 </div>
             </div>
@@ -1210,7 +1216,7 @@
     </div>
 
     <!-- ====================== JAVASCRIPT ====================== -->
-    <script src="js/whatsapp-api.js"></script>
+    <!-- <script src="js/whatsapp-api.js"></script> -->
     <script>
         /* ======================================================
            PRODUCT DATA
@@ -1302,6 +1308,7 @@
             }
 
             // Gallery
+            pdCurrentIndex = 0;
             const mainImg = document.getElementById('pd-main-img');
             const thumbsEl = document.getElementById('pd-thumbs');
             thumbsEl.innerHTML = '';
@@ -1336,6 +1343,23 @@
 
         function handleBackdropClick(e) {
             if (e.target === document.getElementById('pd-backdrop')) closePD();
+        }
+
+        /* slide through gallery images */
+        let pdCurrentIndex = 0;
+        function pdSlide(dir) {
+            if (!currentPD) return;
+            const imgs = currentPD.images;
+            pdCurrentIndex = (pdCurrentIndex + dir + imgs.length) % imgs.length;
+            const mainImg = document.getElementById('pd-main-img');
+            mainImg.style.opacity = '0';
+            setTimeout(() => {
+                mainImg.src = imgs[pdCurrentIndex];
+                mainImg.style.opacity = '1';
+            }, 180);
+            document.querySelectorAll('.pd-thumb').forEach((t, i) => {
+                t.classList.toggle('active', i === pdCurrentIndex);
+            });
         }
 
         function toggleWishlistModal(row) {

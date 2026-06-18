@@ -14,6 +14,7 @@
         rel="stylesheet" />
     <link rel="stylesheet" href="css/topbar.css" />
     <link rel="stylesheet" href="css/silver.css" />
+    <!-- <script src="js/whatsapp-api.js"></script> -->
 </head>
 
 <body>
@@ -185,119 +186,122 @@
         <div class="search-overlay-inner">
             <h3>What are you looking for?</h3>
             <div class="search-overlay-input">
-                <input type="text" id="search-input" placeholder="Search silver jewellery..." autocomplete="off" aria-label="Search products" />
-                <button aria-label="Submit search">
+                <input type="text" id="search-input" placeholder="Search silver jewellery..." autocomplete="off" aria-label="Search products" oninput="handleSearch(this.value)" />
+                <button aria-label="Submit search" onclick="handleSearch(document.getElementById('search-input').value)">
                     <svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="8" /><line x1="21" y1="21" x2="16.65" y2="16.65" /></svg>
                 </button>
             </div>
+            <ul class="search-results-list" id="search-results-list" style="display:none;"></ul>
         </div>
     </div>
 
     <!-- ====================== MOBILE DRAWER ====================== -->
-    <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile navigation">
-        <div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
-        <div class="drawer-panel">
-            <div class="drawer-header">
-                <div class="logo-text" style="font-size:16px;">Shree Ram Ji<span
-                        style="display:block;font-size:10px;color:#c9a84c;font-family:'Jost',sans-serif;letter-spacing:0.2em;">Diamond
-                        Palace</span></div>
-                <button class="drawer-close" onclick="closeDrawer()" id="drawer-close-btn" aria-label="Close menu">✕</button>
-            </div>
-            <div class="drawer-search">
-                <input type="text" id="drawer-search-input" placeholder="Search products..." aria-label="Search products" />
-            </div>
-            <ul class="drawer-nav">
-                <li><a href="index.html" id="drawer-home">Home <span class="arrow">›</span></a></li>
+     <div class="mobile-drawer" id="mobile-drawer" role="dialog" aria-label="Mobile navigation">
+    <div class="drawer-overlay" id="drawer-overlay" onclick="closeDrawer()"></div>
+    <div class="drawer-panel">
+      <div class="drawer-header">
+        <div class="logo-text" style="font-size:16px;">Shree Ram Ji<span
+            style="display:block;font-size:10px;color:#c9a84c;font-family:'Jost',sans-serif;letter-spacing:0.2em;">Diamond
+            Palace</span></div>
+        <button class="drawer-close" onclick="closeDrawer()" id="drawer-close-btn" aria-label="Close menu">✕</button>
+      </div>
+      <div class="drawer-search">
+        <input type="text" id="drawer-search-input" placeholder="Search products..." aria-label="Search products" />
+      </div>
+      <ul class="drawer-nav">
+        <li><a href="index.html" id="drawer-home">Home <span class="arrow">›</span></a></li>
 
-                <!-- Products accordion -->
-                <li id="drawer-products-li">
-                    <a href="#" id="drawer-products" onclick="toggleDrawerProducts(event)">Products <span class="arrow">›</span></a>
-                    <ul class="drawer-submenu" id="drawer-products-submenu">
-                        <!-- Category section -->
-                        <li class="drawer-submenu-section">Shop By Material</li>
-                        <li><a href="gold.html">› Gold Jewellery</a></li>
-                        <li><a href="diamond.html">› Diamond Collection</a></li>
-                        <li><a href="silver.html">› Silver Jewellery</a></li>
+        <!-- Products accordion -->
+        <li id="drawer-products-li">
+          <a href="#" id="drawer-products" onclick="toggleDrawerProducts(event)">Products <span class="arrow">›</span></a>
+          <ul class="drawer-submenu" id="drawer-products-submenu">
+            <!-- Category section -->
+            <li class="drawer-submenu-section">Shop By Material</li>
+            <li><a href="gold.html">› Gold Jewellery</a></li>
+            <li><a href="diamond.html">› Diamond Collection</a></li>
+            <li><a href="silver.html">› Silver Jewellery</a></li>
 
-                        <!-- Product icon grid -->
-                        <li class="drawer-submenu-section" style="margin-top:4px;">All Categories</li>
-                        <li style="padding:0;border:0;">
-                            <div class="drawer-product-grid">
-                                <a href="#" class="drawer-product-item">
-                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/042-bracelet-2.svg" alt="Bracelets" loading="lazy" />
-                                    <span>Bracelets</span>
-                                    <span class="drawer-product-count">13 items</span>
-                                </a>
-                                <a href="earrings.html" class="drawer-product-item">
-                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/015-earrings-1.svg" alt="Earrings" loading="lazy" />
-                                    <span>Earrings</span>
-                                    <span class="drawer-product-count">16 items</span>
-                                </a>
-                                <a href="#" class="drawer-product-item">
-                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/025-earrings-3.svg" alt="Gold Rings" loading="lazy" />
-                                    <span>Gold Rings</span>
-                                    <span class="drawer-product-count">11 items</span>
-                                </a>
-                                <a href="#" class="drawer-product-item">
-                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/045-pendant-1.svg" alt="Necklaces" loading="lazy" />
-                                    <span>Necklaces</span>
-                                    <span class="drawer-product-count">7 items</span>
-                                </a>
-                                <a href="#" class="drawer-product-item">
-                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/031-ring-1.svg" alt="Nose Rings" loading="lazy" />
-                                    <span>Nose Rings</span>
-                                    <span class="drawer-product-count">16 items</span>
-                                </a>
-                                <a href="#" class="drawer-product-item">
-                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/024-engagement.svg" alt="Rings" loading="lazy" />
-                                    <span>Rings</span>
-                                    <span class="drawer-product-count">3 items</span>
-                                </a>
-                                <a href="#" class="drawer-product-item">
-                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/021-gem.svg" alt="Sets" loading="lazy" />
-                                    <span>Sets</span>
-                                    <span class="drawer-product-count">3 items</span>
-                                </a>
-                                <a href="#" class="drawer-product-item">
-                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/042-bracelet-2.svg" alt="Silver Bangles" loading="lazy" />
-                                    <span>Silver Bangles</span>
-                                    <span class="drawer-product-count">7 items</span>
-                                </a>
-                                <a href="#" class="drawer-product-item">
-                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/020-earrings-2.svg" alt="Silver Rings" loading="lazy" />
-                                    <span>Silver Rings</span>
-                                    <span class="drawer-product-count">8 items</span>
-                                </a>
-                                <a href="#" class="drawer-product-item">
-                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/042-bracelet-2.svg" alt="Gold Bangles" loading="lazy" />
-                                    <span>Gold Bangles</span>
-                                    <span class="drawer-product-count">7 items</span>
-                                </a>
-                                <a href="#" class="drawer-product-item">
-                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/050-necklace-4.svg" alt="Gold Buckle" loading="lazy" />
-                                    <span>Gold Buckle</span>
-                                    <span class="drawer-product-count">7 items</span>
-                                </a>
-                                <a href="#" class="drawer-product-item">
-                                    <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/043-piercing.svg" alt="Gold Piercing" loading="lazy" />
-                                    <span>Gold Piercing</span>
-                                    <span class="drawer-product-count">7 items</span>
-                                </a>
-                            </div>
-                        </li>
-                        <!-- All Products button -->
-                        <li style="padding:0;border:0;">
-                            <a href="jewellery.html" class="drawer-all-products-btn">View All Products →</a>
-                        </li>
-                    </ul>
-                </li>
+            <!-- Product icon grid -->
+            <li class="drawer-submenu-section" style="margin-top:4px;">All Categories</li>
+            <li style="padding:0;border:0;">
+              <div class="drawer-product-grid">
+                <a href="#" class="drawer-product-item">
+                  <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/042-bracelet-2.svg" alt="Bracelets" loading="lazy" />
+                  <span>Bracelets</span>
+                  <span class="drawer-product-count">13 items</span>
+                </a>
+                <a href="earrings.html" class="drawer-product-item">
+                  <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/015-earrings-1.svg" alt="Earrings" loading="lazy" />
+                  <span>Earrings</span>
+                  <span class="drawer-product-count">16 items</span>
+                </a>
+                <a href="#" class="drawer-product-item">
+                  <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/025-earrings-3.svg" alt="Gold Rings" loading="lazy" />
+                  <span>Gold Rings</span>
+                  <span class="drawer-product-count">11 items</span>
+                </a>
+                <a href="#" class="drawer-product-item">
+                  <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/045-pendant-1.svg" alt="Necklaces" loading="lazy" />
+                  <span>Necklaces</span>
+                  <span class="drawer-product-count">7 items</span>
+                </a>
+                <a href="#" class="drawer-product-item">
+                  <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/031-ring-1.svg" alt="Nose Rings" loading="lazy" />
+                  <span>Nose Rings</span>
+                  <span class="drawer-product-count">16 items</span>
+                </a>
+                <a href="#" class="drawer-product-item">
+                  <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/024-engagement.svg" alt="Rings" loading="lazy" />
+                  <span>Rings</span>
+                  <span class="drawer-product-count">3 items</span>
+                </a>
+                <a href="#" class="drawer-product-item">
+                  <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/021-gem.svg" alt="Sets" loading="lazy" />
+                  <span>Sets</span>
+                  <span class="drawer-product-count">3 items</span>
+                </a>
+                <a href="#" class="drawer-product-item">
+                  <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/042-bracelet-2.svg" alt="Silver Bangles" loading="lazy" />
+                  <span>Silver Bangles</span>
+                  <span class="drawer-product-count">7 items</span>
+                </a>
+                <a href="#" class="drawer-product-item">
+                  <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/020-earrings-2.svg" alt="Silver Rings" loading="lazy" />
+                  <span>Silver Rings</span>
+                  <span class="drawer-product-count">8 items</span>
+                </a>
+                <a href="#" class="drawer-product-item">
+                  <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/042-bracelet-2.svg" alt="Gold Bangles" loading="lazy" />
+                  <span>Gold Bangles</span>
+                  <span class="drawer-product-count">7 items</span>
+                </a>
+                <a href="#" class="drawer-product-item">
+                  <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/050-necklace-4.svg" alt="Gold Buckle" loading="lazy" />
+                  <span>Gold Buckle</span>
+                  <span class="drawer-product-count">7 items</span>
+                </a>
+                <a href="#" class="drawer-product-item">
+                  <img src="https://goldsmith.ninetheme.com/wp-content/uploads/2022/12/043-piercing.svg" alt="Gold Piercing" loading="lazy" />
+                  <span>Gold Piercing</span>
+                  <span class="drawer-product-count">7 items</span>
+                </a>
+              </div>
+            </li>
+            <!-- All Products button -->
+            <li style="padding:0;border:0;">
+              <a href="jewellery.html" class="drawer-all-products-btn">View All Products →</a>
+            </li>
+          </ul>
+        </li>
 
-                <li><a href="about-us.html" id="drawer-about" onclick="closeDrawer()">About Us <span class="arrow">›</span></a></li>
-                <li><a href="Contact.html" id="drawer-contact">Contact Us <span class="arrow">›</span></a></li>
-            </ul>
-            <div class="drawer-footer">© 2024, <strong>Shree Ram Ji Diamond Palace</strong>. All rights reserved.</div>
-        </div>
+        <li><a href="about-us.html" id="drawer-about" onclick="closeDrawer()">About Us <span class="arrow">›</span></a></li>
+        <li><a href="Contact.html" id="drawer-contact">Contact Us <span class="arrow">›</span></a></li>
+      </ul>
+      <div class="drawer-footer">
+        © 2024, <strong>Shree Ram Ji Diamond Palace</strong>. All rights reserved.
+      </div>
     </div>
+  </div>
 
     <!-- ====================== BREADCRUMB ====================== -->
     <div class="breadcrumb">
@@ -1063,10 +1067,10 @@
 
         // ---- Mobile drawer ----
         const mobileDrawer = document.getElementById('mobile-drawer');
-        function openDrawer() { mobileDrawer.classList.add('open'); document.body.style.overflow = 'hidden'; }
+        function openDrawer() { mobileDrawer.classList.add('open'); document.body.classList.add('no-scroll'); }
         function closeDrawer() {
             mobileDrawer.classList.remove('open');
-            document.body.style.overflow = '';
+            document.body.classList.remove('no-scroll');
             // Close products accordion when drawer closes
             const productsLi = document.getElementById('drawer-products-li');
             if (productsLi) productsLi.classList.remove('open');
@@ -1081,12 +1085,13 @@
         // ---- Search overlay ----
         function openSearch() {
             document.getElementById('search-overlay').classList.add('open');
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('no-scroll');
             setTimeout(() => document.getElementById('search-input').focus(), 200);
         }
         function closeSearch() {
             document.getElementById('search-overlay').classList.remove('open');
-            document.body.style.overflow = '';
+            document.body.classList.remove('no-scroll');
+            document.getElementById('search-results-list').style.display = 'none';
         }
         document.addEventListener('keydown', e => { if (e.key === 'Escape') { closeSearch(); closeDrawer(); closeModal(); closeEnquiry(); } });
 
@@ -1121,12 +1126,14 @@
             if (checkbox.checked) { activeFilterTags.add(label); }
             else { activeFilterTags.delete(label); }
             renderActiveFilters();
+            applyFilters();
         }
         function selectDiscount(el, label) {
             const wasActive = el.classList.contains('active');
             document.querySelectorAll('.discount-badge').forEach(b => { b.classList.remove('active'); activeFilterTags.delete(b.textContent); });
             if (!wasActive) { el.classList.add('active'); activeFilterTags.add(label); }
             renderActiveFilters();
+            applyFilters();
         }
         function selectColorSwatch(item, label) {
             const swatch = item.querySelector('.color-swatch');
@@ -1135,6 +1142,7 @@
             if (!wasActive) { swatch.classList.add('active'); activeFilterTags.add(label); item._label = label; }
             else { if (item._label) activeFilterTags.delete(item._label); }
             renderActiveFilters();
+            applyFilters();
         }
         function renderActiveFilters() {
             const bar = document.getElementById('active-filters');
@@ -1160,6 +1168,7 @@
                 if (cb.closest('label') && cb.closest('label').textContent.trim() === tag) cb.checked = false;
             });
             renderActiveFilters();
+            applyFilters();
         }
         function clearAllFilters() {
             activeFilterTags.clear();
@@ -1167,6 +1176,23 @@
             document.querySelectorAll('.discount-badge').forEach(b => b.classList.remove('active'));
             document.querySelectorAll('.color-swatch').forEach(s => s.classList.remove('active'));
             renderActiveFilters();
+            applyFilters();
+        }
+
+        // ---- FILTER: Actually show/hide product cards ----
+        function applyFilters() {
+            const cards = document.querySelectorAll('.prod-card');
+            const catFilters = [];
+            document.querySelectorAll('#fg-category-body input[type="checkbox"]:checked').forEach(cb => catFilters.push(cb.value));
+            if (catFilters.length === 0 && activeFilterTags.size === 0) {
+                cards.forEach(c => c.style.display = '');
+                return;
+            }
+            cards.forEach(card => {
+                const cat = (card.querySelector('.prod-category-tag') || {}).textContent || '';
+                let show = catFilters.length === 0 || catFilters.some(f => cat.toLowerCase().includes(f));
+                card.style.display = show ? '' : 'none';
+            });
         }
 
         // ---- Range sliders ----
@@ -1244,12 +1270,12 @@
 
             document.getElementById('modal-main-img').src = IMGS[0];
             document.getElementById('product-modal').classList.add('open');
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('no-scroll');
         }
 
         function closeModal() {
             document.getElementById('product-modal').classList.remove('open');
-            document.body.style.overflow = '';
+            document.body.classList.remove('no-scroll');
         }
 
         function setModalImg(index) {
@@ -1267,13 +1293,50 @@
             if (e.target === this) closeModal();
         });
 
+        // ---- SEARCH FUNCTIONALITY ----
+        function handleSearch(query) {
+            const q = query.trim().toLowerCase();
+            const resultsList = document.getElementById('search-results-list');
+            if (!q) {
+                resultsList.style.display = 'none';
+                resultsList.innerHTML = '';
+                document.querySelectorAll('.prod-card').forEach(c => c.style.display = '');
+                return;
+            }
+            const matches = Object.entries(productData).filter(([id, p]) =>
+                p.title.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q)
+            );
+            document.querySelectorAll('.prod-card').forEach(card => {
+                const name = (card.querySelector('.prod-name') || {}).textContent || '';
+                const cat = (card.querySelector('.prod-category-tag') || {}).textContent || '';
+                card.style.display = (name.toLowerCase().includes(q) || cat.toLowerCase().includes(q)) ? '' : 'none';
+            });
+            resultsList.innerHTML = matches.length === 0
+                ? '<p class="search-no-results">No products found for "' + query + '"</p>'
+                : matches.map(([id, p]) => `<li onclick="closeSearch();openModal(${id})"><div class="sr-name">${p.title}</div><div class="sr-cat">${p.cat} · ${p.price}</div></li>`).join('');
+            resultsList.style.display = 'block';
+        }
+
+        function handleDrawerSearch(query) {
+            const q = query.trim().toLowerCase();
+            const resultsList = document.getElementById('drawer-search-results');
+            const drawerNav = document.getElementById('drawer-nav');
+            if (!q) { resultsList.style.display = 'none'; resultsList.innerHTML = ''; drawerNav.style.display = ''; return; }
+            const matches = Object.entries(productData).filter(([id, p]) => p.title.toLowerCase().includes(q) || p.cat.toLowerCase().includes(q));
+            drawerNav.style.display = matches.length > 0 ? 'none' : '';
+            resultsList.innerHTML = matches.length === 0
+                ? '<li><div class="dsr-name" style="color:#aaa">No results found</div></li>'
+                : matches.map(([id, p]) => `<li onclick="closeDrawer();setTimeout(()=>{openModal(${id})},300)"><div class="dsr-name">${p.title}</div><div class="dsr-cat">${p.cat} · ${p.price}</div></li>`).join('');
+            resultsList.style.display = 'block';
+        }
+
         // ---- Enquiry ----
         let currentEnquiryProduct = '';
         function openEnquiry(name) {
             currentEnquiryProduct = name;
             document.getElementById('enquiry-product-name').textContent = 'For: ' + name;
             document.getElementById('enquiry-modal').classList.add('open');
-            document.body.style.overflow = 'hidden';
+            document.body.classList.add('no-scroll');
         }
         function openEnquiryFromModal() {
             const name = currentProduct ? currentProduct.title : 'Product';
@@ -1281,23 +1344,45 @@
         }
         function closeEnquiry() {
             document.getElementById('enquiry-modal').classList.remove('open');
-            document.body.style.overflow = '';
+            document.body.classList.remove('no-scroll');
         }
-        function submitEnquiry(e) {
+        async function submitEnquiry(e) {
             e.preventDefault();
             const btn = document.getElementById('enq-submit-btn');
-            btn.textContent = '✓ Enquiry Sent!';
-            btn.style.background = '#4caf50';
-            setTimeout(() => {
-                btn.textContent = 'Submit Enquiry';
-                btn.style.background = '';
-                document.getElementById('enquiry-form').reset();
-                closeEnquiry();
-            }, 2500);
+            const name = document.getElementById('enq-name').value.trim();
+            const phone = document.getElementById('enq-phone').value.trim();
+            const email = document.getElementById('enq-email').value.trim();
+            const message = document.getElementById('enq-message').value.trim();
+            btn.textContent = '⏳ Sending...';
+            btn.style.background = '#a8a9ad';
+            btn.disabled = true;
+            try {
+                await sendWhatsAppEnquiry({
+                    productName: currentEnquiryProduct || 'Silver Jewellery',
+                    customerName: name, phone: phone,
+                    email: email || 'Not provided',
+                    message: message || 'General enquiry'
+                });
+                btn.textContent = '✓ Enquiry Sent!';
+                btn.style.background = '#4caf50';
+                setTimeout(() => { btn.textContent = 'Submit Enquiry'; btn.style.background = ''; btn.disabled = false; document.getElementById('enquiry-form').reset(); closeEnquiry(); }, 2500);
+            } catch (err) {
+                console.error('WhatsApp API failed:', err);
+                openWhatsApp();
+                btn.textContent = 'Submit Enquiry'; btn.style.background = ''; btn.disabled = false;
+            }
         }
         function openWhatsApp() {
-            const msg = encodeURIComponent('Hello! I am interested in: ' + currentEnquiryProduct);
-            window.open('https://wa.me/' + WHATSAPP_NUMBER + '?text=' + msg, '_blank');
+            const name = document.getElementById('enq-name').value.trim();
+            const phone = document.getElementById('enq-phone').value.trim();
+            const msg = document.getElementById('enq-message').value.trim();
+            const product = currentEnquiryProduct || 'Silver Jewellery';
+            let text = `Hello! I am interested in: *${product}*`;
+            if (name)  text += `\n\nName: ${name}`;
+            if (phone) text += `\nPhone: ${phone}`;
+            if (msg)   text += `\n\nMessage: ${msg}`;
+            text += `\n\n_(Enquiry from Shree Ram Ji Diamond Palace website)_`;
+            window.open(`https://api.whatsapp.com/send?phone=${WHATSAPP_NUMBER}&text=${encodeURIComponent(text)}`, '_blank');
             return false;
         }
         document.getElementById('enquiry-modal').addEventListener('click', function (e) {
