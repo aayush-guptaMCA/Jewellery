@@ -28,6 +28,13 @@ body {
   overflow-x: hidden;
 }
 
+/* Prevent background page scroll when mobile drawer / modal is open */
+body.no-scroll {
+  overflow: hidden;
+  position: fixed;
+  width: 100%;
+}
+
 /* ---- TOP BAR ---- */
 .top-bar {
   background: var(--topbar-bg);
@@ -303,6 +310,8 @@ body {
   height: 100%;
   z-index: 9999;
   pointer-events: none;
+  /* Prevent the drawer from contributing to body scroll */
+  overscroll-behavior: none;
 }
 
 .mobile-drawer.open {
@@ -323,17 +332,21 @@ body {
 }
 
 .drawer-panel {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 320px;
   height: 100%;
+  height: 100dvh;
   background: #fff;
   transform: translateX(-100%);
   transition: transform 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
   display: flex;
   flex-direction: column;
+  will-change: transform;
 }
 
 .mobile-drawer.open .drawer-panel {
@@ -411,7 +424,7 @@ body {
   display: inline-block;
 }
 
-.drawer-nav li.open > a .arrow {
+.drawer-nav li.open>a .arrow {
   transform: rotate(90deg);
   color: var(--topbar-accent);
 }
@@ -425,8 +438,8 @@ body {
   transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
-.drawer-nav li.open > .drawer-submenu {
-  max-height: 600px;
+.drawer-nav li.open>.drawer-submenu {
+  max-height: 1200px;
 }
 
 .drawer-submenu-section {
@@ -440,7 +453,7 @@ body {
 }
 
 .drawer-submenu li a {
-  padding: 11px 22px 11px 32px;
+  padding: 11px 22px 11px 24px;
   font-size: 13px;
   font-weight: 400;
   color: #444;
@@ -535,6 +548,109 @@ body {
   font-size: 11px;
   color: #888;
   text-align: center;
+}
+
+/* ---- Mobile Quick All Products link ---- */
+.drawer-all-products-direct {
+  display: block;
+  margin: 10px 16px 4px;
+  padding: 11px 16px;
+  background: #111;
+  color: #fff !important;
+  text-align: center;
+  text-decoration: none;
+  font-size: 11.5px;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  border-radius: 3px;
+  border-bottom: none !important;
+  transition: var(--transition);
+}
+
+.drawer-all-products-direct:hover {
+  background: var(--topbar-accent) !important;
+  color: #fff !important;
+}
+
+/* ---- Search results in overlay ---- */
+.search-results-list {
+  list-style: none;
+  margin-top: 28px;
+  text-align: left;
+  max-height: 40vh;
+  overflow-y: auto;
+  border: 1px solid #eee;
+  border-radius: 4px;
+}
+
+.search-results-list li {
+  padding: 12px 18px;
+  border-bottom: 1px solid #f5f5f5;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.search-results-list li:last-child {
+  border-bottom: none;
+}
+
+.search-results-list li:hover {
+  background: #fafaf7;
+}
+
+.search-results-list .sr-name {
+  font-size: 14px;
+  font-weight: 600;
+  color: #222;
+  margin-bottom: 2px;
+}
+
+.search-results-list .sr-cat {
+  font-size: 11px;
+  color: #c9a84c;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.search-no-results {
+  margin-top: 22px;
+  font-size: 15px;
+  color: #aaa;
+  text-align: center;
+  padding: 18px;
+}
+
+/* Drawer search results */
+.drawer-search-results {
+  list-style: none;
+  border-top: 1px solid #eee;
+  max-height: 260px;
+  overflow-y: auto;
+}
+
+.drawer-search-results li {
+  padding: 10px 22px;
+  cursor: pointer;
+  border-bottom: 1px solid #f5f5f5;
+  transition: background 0.2s;
+}
+
+.drawer-search-results li:hover {
+  background: #fafaf7;
+}
+
+.drawer-search-results .dsr-name {
+  font-size: 13px;
+  font-weight: 600;
+  color: #222;
+}
+
+.drawer-search-results .dsr-cat {
+  font-size: 10px;
+  color: #c9a84c;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
 
 /* ---- SEARCH OVERLAY ---- */
@@ -657,8 +773,10 @@ body {
 }
 
 @media (max-width: 768px) {
+
   /* Prevent horizontal scroll */
-  html, body {
+  html,
+  body {
     overflow-x: hidden;
     max-width: 100%;
   }
@@ -731,6 +849,7 @@ body {
 }
 
 @media (max-width: 480px) {
+
   /* On very small screens, only show the last top-bar-right item */
   .top-bar-right a:not(:last-child) {
     display: none;
